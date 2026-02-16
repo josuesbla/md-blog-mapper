@@ -1,19 +1,15 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
-    /* config options here */
-    reactCompiler: true,
     output: "export",
-    basePath: "/md-blog-mapper",
+    basePath: isProd ? "/md-blog-mapper" : "",
+    assetPrefix: isProd ? "/md-blog-mapper/" : "",
     images: {
         unoptimized: true,
-        remotePatterns: [
-            {
-                protocol: "https",
-                hostname: "**",
-            },
-        ],
     },
+    distDir: "out",
 };
 
 export default nextConfig;
