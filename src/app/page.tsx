@@ -95,7 +95,7 @@ export default function Home() {
                     const trimmedLine = line.trim();
                     if (trimmedLine.startsWith("author:")) {
                         author = trimmedLine.substring(7).trim();
-                    } else if (trimmedLine.startsWith("author_link:")) {
+                    } else if (trimmedLine.startsWith("authorLink:")) {
                         authorLink = trimmedLine.substring(12).trim();
                     } else if (trimmedLine.startsWith("quote:")) {
                         quote = trimmedLine
